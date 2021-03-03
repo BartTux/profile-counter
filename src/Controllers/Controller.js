@@ -7,8 +7,8 @@
  * @param view object represent by View class
  */
 export class Controller {
-  constructor(model, view) {
-    this.model = model;
-    this.view = view;
-  }
+    constructor(model, view) {
+        this.model = model;
+        this.view = view;
+    }
 }
