@@ -3,42 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProfileCounter</title>
+    <title>BeamCutter</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<form id="form" class="form">
 		<div class="form__container">
-			<div class="form__items">
-				<label for="profile_type" class="form__label">Profile type</label>
-				<input type="text" id="profile_type" class="form__input">
+			<div class="form__group">
+				<label for="beam_type" class="form__label">Beam type</label>
+				<input type="text" id="beam_type" class="form__input">
 			</div>
 
-			<div class="form__items">
-				<label for="profile_count" class="form__label">Amount of</label>
-				<input type="number" id="profile_count" class="form__input">
+			<div class="form__group">
+				<label for="beam_count" class="form__label">Amount of</label>
+				<input type="number" id="beam_count" class="form__input">
 			</div>
 
-			<div class="form__items">
-				<label for="profile_length" class="form__label">Profile length</label>
-				<input type="number" id="profile_length" class="form__input">
+			<div class="form__group">
+				<label for="beam_length" class="form__label">Beam length</label>
+				<input type="number" id="beam_length" class="form__input">
 			</div>
 			
-			<div class="form__items">
+			<div class="form__group">
 				<label for="cut_standard" class="form__label">Cut standard</label>
 				<input type="number" id="cut_standard" class="form__input">
 			</div>
 			
-			<div class="form__items">
+			<div class="form__group">
 				<label for="saw_thickness" class="form__label">Saw thickness</label>
 				<input type="number" id="saw_thickness" class="form__input">
 			</div>
 		</div>
 
-		<button type="button" class="form__button">+ Dodaj nowy</button>
-		<button type="button" class="form__button">Zastosuj</button>
+		<button type="button" id="add_button" class="form__button">+ Dodaj nowy</button>
+		<button type="button" id="submit_button" class="form__button">Zastosuj</button>
 	</form>
+
+	<table class="table">
+		<thead class="table__head">
+			<th class="table__heading">Beam type</th>
+			<th class="table__heading">Amount of</th>
+			<th class="table__heading">Beam length</th>
+			<th class="table__heading">Cut standard</th>
+			<th class="table__heading">Saw thickness</th>
+		</thead>
+		<tbody id="beam_table_body" class="table__body"> <!-- CODE FROM JS HERE --> </tbody>
+	</table>
 
 	<script type="module" src="app.js"></script>
 </body>

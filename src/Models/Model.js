@@ -1,55 +1,31 @@
 export class Model {
-  constructor(
-    profileType = null, 
-    amountOf = null, 
-    profileLength = null,
-    mainProfileLength = null,
-    sawThickness = null,
+  constructor() {
+    this.beams = JSON.parse(localStorage.getItem('beams')) || [];
+  }
+
+  addbeam(
+    beamType, 
+    amountOf, 
+    beamLength,
+    mainbeamLength,
+    sawThickness
   ) {
-    this.profileType = profileType;
-    this.amountOf = amountOf;
-    this.profileLength = profileLength;
-    this.mainProfileLength = mainProfileLength;
-    this.sawThickness = sawThickness;
-  }
+    const beam = {
+      id: this.beams.length > 0 
+        ? this.beams[this.beams.id - 1].id + 1 
+        : 1,
+      beam_type: beamType,
+      amount_of: amountOf,
+      beam_length: beamLength,
+      main_beam_length: mainbeamLength,
+      saw_thickness: sawThickness
+    }
 
-  getProfileType() {
-    return this.profileType
+    this.beams.push(beam);
+    this._addBeamToLocalStorage(beam);
   }
-
-  getAmountOf() {
-    return this.amountOf;
-  }
-
-  getProfileLength() {
-    return this.profileLength;
-  }
-
-  getMainProfileLength() {
-    return this.mainProfileLength;
-  }
-
-  getSawThickness() {
-    return this.sawThickness;
-  }
-
-  setProfileType(profileType) {
-    this.profileType = profileType;
-  }
-
-  setAmountOf(amountOf) {
-    this.amountOf = amountOf;
-  }
-
-  setProfileLength(profileLength) {
-    this.profileLength = profileLength;
-  }
-
-  setMainProfileLength(mainProfileLength) {
-    this.mainProfileLength = mainProfileLength;
-  }
-
-  setSawThickness(sawThickness) {
-    this.sawThickness = sawThickness;
+  
+  _addBeamToLocalStorage(beam) {
+    localStorage.setItem('beams', JSON.stringify(beam));
   }
 }
