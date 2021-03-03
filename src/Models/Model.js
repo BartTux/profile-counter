@@ -3,11 +3,11 @@ export class Model {
     this.beams = JSON.parse(localStorage.getItem('beams')) || [];
   }
 
-  addbeam(
+  addBeam(
     beamType, 
     amountOf, 
     beamLength,
-    mainbeamLength,
+    mainBeamLength,
     sawThickness
   ) {
     const beam = {
@@ -17,7 +17,7 @@ export class Model {
       beam_type: beamType,
       amount_of: amountOf,
       beam_length: beamLength,
-      main_beam_length: mainbeamLength,
+      main_beam_length: mainBeamLength,
       saw_thickness: sawThickness
     }
 
